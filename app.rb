@@ -1,7 +1,7 @@
 require 'sinatra'
 require 'sinatra/activerecord'
 
-set :database, "sqlite3:wyltdb.sqlite3"
+configure(:development) {set :database, "sqlite3:wyltdb.sqlite3"}
 
 require './models'
 
@@ -44,4 +44,3 @@ get '/' do
 	erb :sign_up
 end
 
-configure(:development) {set :database, "sqlite3:wyltdb.sqlite3"}
